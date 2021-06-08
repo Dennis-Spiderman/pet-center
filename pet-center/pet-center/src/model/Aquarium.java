@@ -36,4 +36,13 @@ public class Aquarium extends Habitat{
 	public void setMaterial(String material) {
 		this.material = material;
 	}
+	
+	@Override
+	public String getInfo() {
+		String info;
+		
+		info = "Type: " + typeStr +"\nMaterial: " + material;
+		
+		return info;
+	}	
 }

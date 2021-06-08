@@ -25,4 +25,13 @@ public class Guacal extends Habitat{
 	public void setWeight(double weight) {
 		this.weight = weight;
 	}
+	
+	@Override
+	public String getInfo() {
+		String info;
+		
+		info = "Height: " + height +"\nWeight: " + weight;
+		
+		return info;
+	}	
 }

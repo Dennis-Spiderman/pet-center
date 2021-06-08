@@ -91,4 +91,34 @@ public class Habitat {
 	public void setPet(Pet pet) {
 		this.pet = pet;
 	}
+	
+	public String getInfo() {
+		String info = "";
+		
+		info += "ID: " + id + "\nLarge: " + large + "\nWidth: " + width + "\nType of use: " 
+				+ typeUseStr + "\nState: " + stateStr;
+		
+		if(pet != null) {
+			info += "\n---Pet info---\n" + pet.getInfo();
+		}else {
+			info += "\n---Pet info---\nThe habitat is empty.";
+		}
+		
+		return info;
+	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 }

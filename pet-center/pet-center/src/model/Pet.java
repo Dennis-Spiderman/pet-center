@@ -64,4 +64,13 @@ public class Pet {
 	public void setOwner(Owner owner) {
 		this.owner = owner;
 	}
+	
+	public String getInfo() {
+		String info = "";
+		
+		info += "Specie: " + specie + "\nName: " + name + "\nAge: " + age + "\nSymptoms: " 
+				+ symptoms + "\n---Owner info---" + owner.getInfo();
+		
+		return info;
+	}
 }

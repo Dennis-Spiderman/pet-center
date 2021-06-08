@@ -25,4 +25,13 @@ public class Corral extends Habitat{
 	public void setPlantType(String plantType) {
 		this.plantType = plantType;
 	}
+	
+	@Override
+	public String getInfo() {
+		String info;
+		
+		info = "Plants: " + plants +"\nType of plants: " + plantType;
+		
+		return info;
+	}	
 }

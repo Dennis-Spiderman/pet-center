@@ -45,4 +45,12 @@ public class Owner {
 	public void setDirection(String direction) {
 		this.direction = direction;
 	}
+	
+	public String getInfo() {
+		String info;
+		
+		info = "ID: " + id + "\nName: " + name + "\nTlf: " + tlf + "\nDirection: " + direction;
+		
+		return info;		
+	}
 }

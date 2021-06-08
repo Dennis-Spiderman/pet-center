@@ -15,4 +15,13 @@ public class Cottage extends Habitat{
 	public void setToys(int toys) {
 		this.toys = toys;
 	}
+	
+	@Override
+	public String getInfo() {
+		String info;
+		
+		info = "Toys: " + toys;
+		
+		return info;
+	}	
 }

@@ -72,7 +72,7 @@ public class Menu {
 	
 	public void daycareHospitalization() {
 		System.out.println("--------------------You are in the daycare-hospitalization service--------------------"
-				+ "What do you want to do?");
+				+ "\nWhat do you want to do?");
 		
 		System.out.println("1) Register a pet.\n2) Find a pet.\n3) See the daycare map.\n4) Find a habitat.\n"
 				+ "5) See the statistics.\n6) Back to main menu.\n");
@@ -186,21 +186,41 @@ public class Menu {
 		String direction = in.nextLine();
 		
 		p.addPet(id, ownerName, tlf, direction, specie, petName, age, symptoms);
+		
+		System.out.println("Pet added");
+		
+		menu();
 	}
 	
 	public void daycareFindPet() {
 		System.out.println("--------------------You are in the find pet service--------------------");
+		System.out.println("Write the name of the pet you wanna find:");
+		String pn = in.nextLine();
+		
+		System.out.println(p.findPet(pn));
+		
+		menu();
 	}
 	
 	public void daycareSeeMap() {
 		System.out.println("--------------------You are in the see map service--------------------");
+		
+		menu();
 	}
 	
 	public void daycareFindHabitat() {
 		System.out.println("--------------------You are in the find habitat service--------------------");
+		System.out.println("Write the id of the habitat you wanna find:");
+		String id = in.nextLine();
+		
+		System.out.println(p.findHabitat(id));
+		
+		menu();
 	}
 	
 	public void daycareSeeStatistics() {
 		System.out.println("--------------------You are in the see statistics service--------------------");
+	
+		menu();
 	}	
 }

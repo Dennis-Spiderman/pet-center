@@ -46,4 +46,13 @@ public class Cage extends Habitat{
 	public void setBirdsQuantity(int birdsQuantity) {
 		this.birdsQuantity = birdsQuantity;
 	}
+	
+	@Override
+	public String getInfo() {
+		String info;
+		
+		info = "Disposition: " + dispositionStr +"\nHeight: " + height + "\nCapacity: " + birdsQuantity;
+		
+		return info;
+	}	
 }

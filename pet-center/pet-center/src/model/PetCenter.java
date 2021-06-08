@@ -143,4 +143,134 @@ public class PetCenter {
 			}
 		}
 	}
+	
+	public String findPet(String pn) {
+		Pet p = null;
+		String pInfo = "";
+		boolean found = false;
+		
+		for(int i = 0; i < guacals.length || !found; i++) {
+			if(guacals[i].getPet() != null) {
+				if(guacals[i].getPet().getName().equalsIgnoreCase(pn)) {
+					p = guacals[i].getPet();
+					found = true;
+				}
+			}
+		}
+		
+		for(int i = 0; i < cottages.length || !found; i++) {
+			if(cottages[i].getPet() != null) {
+				if(cottages[i].getPet().getName().equalsIgnoreCase(pn)) {
+					p = cottages[i].getPet();
+					found = true;
+				}
+			}
+		}
+		
+		for(int i = 0; i < aquariums.length || !found; i++) {
+			if(aquariums[i].getPet() != null) {
+				if(aquariums[i].getPet().getName().equalsIgnoreCase(pn)) {
+					p = aquariums[i].getPet();
+					found = true;
+				}
+			}
+		}
+
+		for(int i = 0; i < corrals.length || !found; i++) {
+			if(corrals[i].getPet() != null) {
+				if(corrals[i].getPet().getName().equalsIgnoreCase(pn)) {
+					p = corrals[i].getPet();
+					found = true;
+				}
+			}
+		}
+		
+		for(int i = 0; i < cages.length || !found; i++) {
+			if(cages[i].getPet() != null) {
+				if(cages[i].getPet().getName().equalsIgnoreCase(pn)) {
+					p = cages[i].getPet();
+					found = true;
+				}
+			}
+		}
+		
+		if(p == null) {
+			pInfo = "Pet not found.";
+		}else {
+			pInfo = p.getInfo();
+		}
+		
+		return pInfo;
+	}
+	
+	public String findHabitat(String id) {
+		Habitat h = null;
+		String hInfo = "";
+		boolean found = false;
+		
+		if(!found) {
+			for(int i = 0; i < guacals.length; i++) {
+				if(guacals[i].getId().equalsIgnoreCase(id)) {
+					h = guacals[i];
+					found = true;
+				}else {
+					found = false;
+				}
+			}
+			
+		}
+		
+		if(!found) {
+			for(int i = 0; i < cottages.length; i++) {
+				if(cottages[i].getId().equalsIgnoreCase(id)) {
+					h = cottages[i];
+					found = true;
+				}else {
+					found = false;
+				}
+			}	
+		}
+			
+		if(!found) {
+			for(int i = 0; i < aquariums.length; i++) {
+				if(aquariums[i].getId().equalsIgnoreCase(id)) {
+					h = aquariums[i];
+					found = true;
+				}else {
+					found = false;
+				}
+			}
+
+		}
+				
+		if(!found) {
+			for(int i = 0; i < corrals.length; i++) {
+				if(corrals[i].getId().equalsIgnoreCase(id)) {
+					h = corrals[i];
+					found = true;
+				}else {
+					found = false;
+				}
+			}
+		}
+		
+		if(!found) {
+			for(int i = 0; i < cages.length; i++) {
+				if(cages[i].getId().equalsIgnoreCase(id)) {
+					h = cages[i];
+					found = true;
+				}else {
+					found = false;
+				}
+			}	
+		}
+		
+		if(h == null) {
+			hInfo = "Habitat not found.";
+		}else {
+			hInfo = h.getInfo();
+		}
+		
+		return hInfo;
+	}
 }
