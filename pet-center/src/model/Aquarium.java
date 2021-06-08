@@ -5,7 +5,7 @@ public class Aquarium extends Habitat{
 	private String typeStr;
 	private String material;
 	
-	public Aquarium(int id, double large, double width, int typeUse, boolean type, String material) {
+	public Aquarium(String id, double large, double width, int typeUse, boolean type, String material) {
 		super(id, large, width, typeUse);
 		this.type = type;
 		this.material = material;

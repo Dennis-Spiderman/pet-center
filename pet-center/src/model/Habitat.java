@@ -1,7 +1,7 @@
 package model;
 
 public class Habitat {
-	private int id;
+	private String id;
 	private double large;
 	private double width;
 	private int typeUse;
@@ -9,19 +9,22 @@ public class Habitat {
 	private boolean state;
 	private String stateStr;
 	
-	public Habitat(int id, double large, double width, int typeUse) {
+	private Pet pet;
+	
+	public Habitat(String id, double large, double width, int typeUse) {
 		super();
 		this.id = id;
 		this.large = large;
 		this.width = width;
 		this.typeUse = typeUse;
+		state = true;
 	}
-
-	public int getId() {
+	
+	public String getId() {
 		return id;
 	}
 
-	public void setId(int id) {
+	public void setId(String id) {
 		this.id = id;
 	}
 
@@ -68,7 +71,7 @@ public class Habitat {
 	}
 	
 	public String getState() {
-		if(state) {
+		if(!state) {
 			stateStr = "Ocuppied";
 		}else {
 			stateStr = "Empty";
@@ -79,5 +82,13 @@ public class Habitat {
 	
 	public void setState(boolean state) {
 		this.state = state;
+	}
+	
+	public Pet getPet() {
+		return pet;
+	}
+	
+	public void setPet(Pet pet) {
+		this.pet = pet;
 	}
 }

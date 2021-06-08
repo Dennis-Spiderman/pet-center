@@ -4,7 +4,7 @@ public class Guacal extends Habitat{
 	private double height;
 	private double weight;
 	
-	public Guacal(int id, double large, double width, int typeUse, double height, double weight) {
+	public Guacal(String id, double large, double width, int typeUse, double height, double weight) {
 		super(id, large, width, typeUse);
 		this.height = height;
 		this.weight = weight;

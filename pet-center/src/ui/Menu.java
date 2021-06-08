@@ -2,11 +2,16 @@ package ui;
 
 import java.util.Scanner;
 
+import model.PetCenter;
+
 public class Menu {
 	private Scanner in;
+	private PetCenter p;
 	
 	public Menu() {
 		in = new Scanner(System.in);
+		p = new PetCenter();
+		
 	}
 	
 	public void start() {		
@@ -113,14 +118,90 @@ public class Menu {
 	
 	public void daycareRegisterPet() {
 		System.out.println("--------------------You are in the register pet service--------------------");
+		System.out.println("Type the follow information.\nPet's name:");
+		String petName = in.nextLine();
+		
+		boolean validSpecie = false;
+		String specie = "";
+		
+		while(!validSpecie) {
+			System.out.println("Pet species:");
+			System.out.println("1) Dog.\n2) Cat.\n3) Reptile.\n4) Rabbit.\n5) Bird.");
+			int spSelec = Integer.parseInt(in.nextLine());
+			
+			switch (spSelec) {
+			case 1:
+				specie = "Dog";
+				validSpecie = true;
+				break;
+
+			case 2:
+				specie = "Cat";
+				validSpecie = true;
+				break;
+				
+			case 3:
+				specie = "Reptile";
+				validSpecie = true;
+				break;
+				
+			case 4:
+				specie = "Rabbit";
+				validSpecie = true;
+				break;
+				
+			case 5:
+				specie = "Bird";
+				validSpecie = true;
+				break;
+				
+			default:
+				System.out.println("Your selection is unavailable. Try again.\n");
+				validSpecie = false;
+				break;
+			}
+		}
+		
+		/*if(specie.equalsIgnoreCase("dog") || specie.equalsIgnoreCase("cat")) {
+			System.out.println("Pet breed:");
+			String race = in.nextLine();
+		}*/
+		
+		System.out.println("Pet's age:");
+		int age = Integer.parseInt(in.nextLine());
+		
+		System.out.println("Pet's symptoms:");
+		String symptoms = in.nextLine();
+		
+		System.out.println("Owner id:");
+		String id = in.nextLine();
+		
+		System.out.println("Owner name:");
+		String ownerName = in.nextLine();
+		
+		System.out.println("Owner phone number:");
+		String tlf = in.nextLine();
+		
+		System.out.println("Owner direction:");
+		String direction = in.nextLine();
+		
+		p.addPet(id, ownerName, tlf, direction, specie, petName, age, symptoms);
 	}
 	
 	public void daycareFindPet() {
 		System.out.println("--------------------You are in the find pet service--------------------");
+		System.out.println("Write the name of the pet you wanna find:");
+		String pn = in.nextLine();
+		
+		p.findPet(pn);
 	}
 	
 	public void daycareSeeMap() {
 		System.out.println("--------------------You are in the see map service--------------------");
+		System.out.println("Write the id of the habitat you wanna find:");
+		String id = in.nextLine();
+		
+		p.findPet(id);
 	}
 	
 	public void daycareFindHabitat() {

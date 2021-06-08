@@ -4,7 +4,7 @@ public class Corral extends Habitat{
 	private int plants;
 	private String plantType;
 	
-	public Corral(int id, double large, double width, int typeUse, int plants, String plantType) {
+	public Corral(String id, double large, double width, int typeUse, int plants, String plantType) {
 		super(id, large, width, typeUse);
 		this.plants = plants;
 		this.plantType = plantType;

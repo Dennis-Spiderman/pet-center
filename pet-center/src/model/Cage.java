@@ -1,13 +1,13 @@
 package model;
 
-public class Cage {
+public class Cage extends Habitat{
 	private boolean disposition;
 	private String dispositionStr;
 	private double height;
 	private int birdsQuantity;
 	
-	public Cage(boolean disposition, double height, int birdsQuantity) {
-		super();
+	public Cage(String id, double large, double width, int typeUse, boolean disposition, double height, int birdsQuantity) {
+		super(id, height, height, birdsQuantity);
 		this.disposition = disposition;
 		this.height = height;
 		this.birdsQuantity = birdsQuantity;
